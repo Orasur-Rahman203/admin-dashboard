@@ -71,13 +71,13 @@ export const SideNav = (props) => {
                 color="inherit"
                 variant="subtitle1"
               >
-                Devias
+                Admin
               </Typography>
               <Typography
                 color="neutral.400"
                 variant="body2"
               >
-                Production
+                Dashboard
               </Typography>
             </div>
             <SvgIcon
@@ -136,12 +136,12 @@ export const SideNav = (props) => {
           >
             Need more features?
           </Typography>
-          <Typography
+          {/* <Typography
             color="neutral.500"
             variant="body2"
           >
             Check out our Pro solution template.
-          </Typography>
+          </Typography> */}
           <Box
             sx={{
               display: 'flex',
@@ -158,7 +158,7 @@ export const SideNav = (props) => {
               src="/assets/devias-kit-pro.png"
             />
           </Box>
-          <Button
+          {/* <Button
             component="a"
             endIcon={(
               <SvgIcon fontSize="small">
@@ -166,13 +166,11 @@ export const SideNav = (props) => {
               </SvgIcon>
             )}
             fullWidth
-            href="https://material-kit-pro-react.devias.io/"
             sx={{ mt: 2 }}
-            target="_blank"
             variant="contained"
           >
             Pro Live Preview
-          </Button>
+          </Button> */}
         </Box>
       </Box>
     </Scrollbar>

@@ -59,13 +59,23 @@ const Page = () => {
     []
   );
 
-  const handleSkip = useCallback(
-    () => {
-      auth.skip();
-      router.push('/');
-    },
-    [auth, router]
-  );
+  // const handleSkip = useCallback(
+  //   () => {
+  //     auth.skip();
+  //     router.push('/');
+  //   },
+  //   [auth, router]
+  // );
+  const handleSkip= async()=>{
+      let url = "/auth/login";
+      let phoneNumber = "015555555";
+      let password = "111111";
+      let data = await loginHandler(url, phoneNumber, password);
+      console.log("data-----", data);
+    auth.skip();
+    router.push("/");
+  };
+
   const handleSignIn = useCallback(
     () => {
       auth.skip();
@@ -122,7 +132,7 @@ const Page = () => {
                 </Link>
               </Typography> */}
             </Stack>
-            <Tabs
+            {/* <Tabs
               onChange={handleMethodChange}
               sx={{ mb: 3 }}
               value={method}
@@ -131,12 +141,11 @@ const Page = () => {
                 label="Email"
                 value="email"
               />
-              {/* <Tab
+              <Tab
                 label="Phone Number"
                 value="phoneNumber"
-              /> */}
-            </Tabs>
-            {method === 'email' && (
+              />
+            </Tabs> */}
               <form
                 noValidate
                 onSubmit={formik.handleSubmit}
@@ -205,7 +214,7 @@ const Page = () => {
                   </div>
                 </Alert> */}
               </form>
-            )}
+
             {/* {method === 'phoneNumber' && (
               <div>
                 <Typography
